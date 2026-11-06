@@ -18,3 +18,12 @@ If uploading through the GitHub website, remember that uploading a ZIP file dire
 
 ### Poster artwork
 The Beyond Research page uses externally hosted promotional images. These are not bundled inside the ZIP and require a live connection; source sites may block hotlinking or change their URLs. When an image fails, the title card remains. Confirm rights before public reuse, or replace sources with appropriately licensed local images.
+
+
+## Optimized poster loading (November 2026)
+
+The Beyond Research poster gallery requests smaller ~340x408 WebP versions through wsrv.nl, with lazy loading for posters below the first row, reserved image dimensions, and a direct-source fallback if the optimizer is unavailable. This reduces expected transfer size, but speed and reliability still depend on third-party hosts.
+
+**Fastest and most reliable option:** If you have permission to use poster artwork, download approved images yourself, resize each to about 340x408 pixels, convert to WebP (quality 65–75), save under `posters/`, and replace the `src` URL with `posters/<filename>.webp`. This removes remote image dependencies.
+
+Navigation update: bold Georgia serif, 16px desktop and 15px mobile.

@@ -18,3 +18,5 @@ This package contains the complete seven-page academic website, your final CV, a
 
 ## Note on artwork
 Movie, TV, and musician thumbnails link to external providers and may not always load quickly. They are not bundled in this ZIP. The profile photo is stored locally for faster loading.
+
+Latest update: Beyond Research uses rounded Movies / TV Series / Music tabs; home portrait is a wider 5:4 crop with constrained size on desktop and mobile.

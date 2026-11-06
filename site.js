@@ -53,3 +53,26 @@ document.addEventListener('DOMContentLoaded',()=>{
   const update=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%'};
   window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
 });
+
+
+/* Accessible pill tabs for Beyond Research gallery */
+document.addEventListener('DOMContentLoaded',()=>{
+ const group=document.querySelector('.gallery-tabs[role="tablist"]');if(!group)return;
+ const tabs=[...group.querySelectorAll('[role="tab"]')];
+ function select(tab,focus=false){
+   for(const t of tabs){const selected=t===tab;t.setAttribute('aria-selected',String(selected));t.classList.toggle('selected',selected);t.tabIndex=selected?0:-1;
+     const panel=document.getElementById(t.getAttribute('aria-controls'));if(panel)panel.hidden=!selected;
+   }
+   if(focus)tab.focus();
+ }
+ tabs.forEach((t,i)=>{t.addEventListener('click',()=>select(t));t.addEventListener('keydown',event=>{
+   if(!['ArrowRight','ArrowLeft','Home','End'].includes(event.key))return;
+   event.preventDefault();let target=i;
+   if(event.key==='ArrowRight')target=(i+1)%tabs.length;
+   if(event.key==='ArrowLeft')target=(i+tabs.length-1)%tabs.length;
+   if(event.key==='Home')target=0;
+   if(event.key==='End')target=tabs.length-1;
+   select(tabs[target],true);
+ });});
+ select(tabs[0]);
+});

@@ -126,3 +126,23 @@ main{animation:siteEnter .4s ease-out both}
 @keyframes siteEnter{from{opacity:.25;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @media(max-width:700px){.nav a{font-size:15px}.portrait{width:min(100%,330px);aspect-ratio:5/4;object-position:center 29%}.hero{gap:18px}.brand{font-size:17px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+
+
+/* Gallery pill navigation: one category at a time */
+.gallery-tabs{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 26px}
+.gallery-tab{font:700 17px/1.3 Georgia,'Times New Roman',serif;border-radius:999px;padding:12px 24px;min-height:49px;background:#202934;color:#E3E7EB;border:2px solid #4A5360;transition:background .2s,border-color .2s,transform .2s}
+.gallery-tab:hover{background:#2C3D4C;border-color:#D9A06A;transform:translateY(-2px)}
+.gallery-tab[aria-selected="true"]{background:#4C3A2C;color:#F3C795;border-color:#B68A57}
+.gallery-tab:focus-visible{outline:3px solid #F3C795;outline-offset:3px}
+.gallery-panel[hidden]{display:none!important}
+/* Homepage portrait: short and wide instead of an overly tall crop */
+.hero{grid-template-columns:minmax(0,1.32fr) minmax(265px,.78fr);gap:30px}
+.hero .photo-wrap{width:min(100%,350px);max-width:350px;justify-self:center;align-self:center}
+.hero .portrait{display:block;width:100%;height:auto;aspect-ratio:5/4;max-height:none;object-fit:cover;object-position:center 37%;border-radius:17px}
+@media(max-width:700px){
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero .photo-wrap{grid-row:1;justify-self:center;width:min(100%,330px);max-width:330px}
+  .hero .portrait{width:100%;aspect-ratio:5/4;max-height:none;object-fit:cover;object-position:center 35%}
+  .gallery-tabs{gap:8px;margin:18px 0 22px}
+  .gallery-tab{font-size:15px;min-height:43px;padding:9px 17px}
+}

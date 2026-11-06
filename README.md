@@ -1,29 +1,20 @@
 # Aliasghar Bagheri Tirtashi — Academic Website
 
-A seven-page static website using Dark Ink & Ochre colors and Georgia (Scholarly Serif).
+A seven-page academic website for GitHub Pages, in Dark Ink & Ochre with Scholarly Serif typography. Includes the profile image and CV.
 
-## GitLab Pages
+## Publish on GitHub Pages
 
-1. Create a new **public** GitLab project (or a private project if your Pages visibility settings allow public viewing).
-2. Extract this ZIP and upload **all** files to the **root** of your repository, including `.gitlab-ci.yml`. GitLab web upload may hide dotfiles on some devices; ensure `.gitlab-ci.yml` is present.
-3. Commit the files to the default branch.
-4. Open **Build > Pipelines** and confirm the `pages` job succeeds.
-5. Open **Deploy > Pages** to find the published URL.
+1. Sign in to GitHub as `aliasgharbagheri2079`.
+2. Open the repository `aliasgharbagheri2079.github.io` (or create a **Public** repository with exactly this name if it does not exist).
+3. Upload all files in this folder to the **root** of the repository, not into a nested folder. If your repository already has `index.html`, overwrite it using GitHub's editor or Git locally.
+4. Commit the files to the `main` branch.
+5. In the repository, open **Settings → Pages**, select **Deploy from a branch**, branch **main**, folder **/(root)**, and save.
+6. After deployment, visit `https://aliasgharbagheri2079.github.io/`.
 
-The included `.gitlab-ci.yml` copies the static files into `public/` and publishes that folder. The deployed URL depends on the GitLab account/project name and Pages configuration.
+The home page is `index.html`, other pages are linked in navigation, styling is in `style.css`, functionality in `site.js`, photo is `profile.jpg`, and the CV button links to `CV.pdf`.
 
-To use GitHub Pages instead, publish the same static site without `.gitlab-ci.yml`.
+If uploading through the GitHub website, remember that uploading a ZIP file directly does not publish its contents: extract the ZIP and upload the individual files.
 
-## Files
-- `index.html`: homepage (About, Research Interests, Academic Journey — education milestones only)
-- `projects.html`: research descriptions without numerical performance results
-- `publications.html`: IEEE citations and expandable summaries
-- `education.html`: academic degrees, supervisors, and thesis titles
-- `experience.html`: teaching experience and technical skills
-- `beyond.html`: movies, television, and Persian music galleries
-- `contact.html`: contact details and academic links
-- `style.css`, `site.js`: shared styles and mobile navigation
-- `profile.jpg`: portrait supplied by the site owner
-- `CV.pdf`: academic CV supplied by the site owner
 
-**Privacy:** The phone number and both email addresses are public in `contact.html`, as requested.
+### Poster artwork
+The Beyond Research page uses externally hosted promotional images. These are not bundled inside the ZIP and require a live connection; source sites may block hotlinking or change their URLs. When an image fails, the title card remains. Confirm rights before public reuse, or replace sources with appropriately licensed local images.

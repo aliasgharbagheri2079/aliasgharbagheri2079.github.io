@@ -31,3 +31,10 @@ Navigation update: bold Georgia serif, 16px desktop and 15px mobile.
 
 ## Music photographs
 The three musician portrait thumbnails are linked from Wikimedia Commons (not bundled locally). Source attribution and licenses appear beneath the Music I Enjoy cards on beyond.html. Image availability depends on Wikimedia Commons; replace with locally hosted thumbnails if you acquire copies later.
+
+
+## Contact form (Formspree)
+
+The Contact page includes an AJAX form configured to send through `https://formspree.io/f/xoeezvdl`. It collects name, email, subject, and message, with status updates and basic spam honeypot. On success the form resets; on failure it displays an error.
+
+Before using it: sign in to Formspree, ensure the form is active and its receiving address is verified, and check that notifications go to `bagheriali842@gmail.com`. After publishing on GitHub Pages, submit a test message and confirm it arrived in the Formspree dashboard and your email inbox. Formspree may show additional spam/CAPTCHA challenges depending on account settings. **This package has not sent a live test submission.**

@@ -49,3 +49,27 @@
 .artist-credits{margin-top:18px;max-width:950px;line-height:1.8}
 .artist-credits a{font-weight:500}
 @media(max-width:700px){.artist-icon{width:78px;height:84px;flex-basis:78px}.artist-icon img{height:100%}}
+
+
+/* Academic contact form: Dark Ink & Ochre, Scholarly Serif */
+.contact-form-section{margin:44px 0 12px;max-width:850px}
+.contact-form-heading{margin-bottom:20px}
+.contact-form-heading h2{margin-bottom:10px}
+.contact-form{padding:27px 28px}
+.contact-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.form-field{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;min-width:0}
+.form-field label{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:16px;color:#f0eeea}
+.form-field input,.form-field select,.form-field textarea{font:16px/1.5 Georgia,'Times New Roman',serif;color:#f0eeea;background:#191c20;border:1px solid #68605a;border-radius:8px;padding:12px 14px;width:100%;min-height:47px;transition:border-color .15s,box-shadow .15s}
+.form-field textarea{min-height:150px;resize:vertical}
+.form-field select{color-scheme:dark}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#aca7a1;opacity:1}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{outline:2px solid #e9b16e;outline-offset:2px;border-color:#e9b16e}
+.form-field input:invalid:not(:placeholder-shown){border-color:#8a6660}
+.form-spam-field{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+.contact-form-bottom{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.contact-submit:disabled{cursor:wait;opacity:.7}
+.form-hint{font-size:13px;color:#c5c0ba}
+.form-status{margin:15px 0 0!important;border-radius:8px;padding:12px 15px;font-size:14px;line-height:1.55}
+.form-status.success{color:#d6f5d9;background:#223329;border:1px solid #5a9567}
+.form-status.error{color:#ffdfd3;background:#3b2925;border:1px solid #af7365}
+@media(max-width:650px){.contact-form-grid{grid-template-columns:1fr;gap:0}.contact-form{padding:20px 16px}.contact-form-section{margin-top:32px}.contact-form-bottom{align-items:stretch;flex-direction:column}.contact-submit{width:100%}}

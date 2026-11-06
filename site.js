@@ -45,3 +45,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     }
   });
 });
+
+
+/* Lightweight reading progress, no external library */
+document.addEventListener('DOMContentLoaded',()=>{
+  const bar=document.querySelector('.reading-progress');if(!bar)return;
+  const update=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%'};
+  window.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);update();
+});

@@ -1,40 +1,20 @@
-# Aliasghar Bagheri Tirtashi — Academic Website
+# Aliasghar Bagheri Tirtashi — GitHub Pages website
 
-A seven-page academic website for GitHub Pages, in Dark Ink & Ochre with Scholarly Serif typography. Includes the profile image and CV.
+This package contains the complete seven-page academic website, your final CV, and the newly edited portrait without people in the background. The portrait is saved as a compressed `profile.jpg`.
 
-## Publish on GitHub Pages
+## Upload
+1. Open `https://github.com/aliasgharbagheri2079/aliasgharbagheri2079.github.io`.
+2. Upload **all extracted files** into the repository root, replacing the existing versions (or update matching files one at a time).
+3. Commit to `main` and confirm Settings → Pages uses `main` and `/(root)`.
+4. Visit `https://aliasgharbagheri2079.github.io` after deployment.
 
-1. Sign in to GitHub as `aliasgharbagheri2079`.
-2. Open the repository `aliasgharbagheri2079.github.io` (or create a **Public** repository with exactly this name if it does not exist).
-3. Upload all files in this folder to the **root** of the repository, not into a nested folder. If your repository already has `index.html`, overwrite it using GitHub's editor or Git locally.
-4. Commit the files to the `main` branch.
-5. In the repository, open **Settings → Pages**, select **Deploy from a branch**, branch **main**, folder **/(root)**, and save.
-6. After deployment, visit `https://aliasgharbagheri2079.github.io/`.
+## What is included
+- Midnight Blue & Copper palette, Georgia serif type, minimal name-only header.
+- Optimized edited portrait (`profile.jpg`) shown on the homepage, wider crop on mobile.
+- Seven pages, publications, projects, education, academic experience, Beyond Research, and compact contact cards.
+- Contact form configured with Formspree endpoint `https://formspree.io/f/xoeezvdl` (verify receiving email in Formspree settings).
+- Research cards with optional methods details, lightweight page animation and reading progress bar.
+- Academic CV (`CV.pdf`).
 
-The home page is `index.html`, other pages are linked in navigation, styling is in `style.css`, functionality in `site.js`, photo is `profile.jpg`, and the CV button links to `CV.pdf`.
-
-If uploading through the GitHub website, remember that uploading a ZIP file directly does not publish its contents: extract the ZIP and upload the individual files.
-
-
-### Poster artwork
-The Beyond Research page uses externally hosted promotional images. These are not bundled inside the ZIP and require a live connection; source sites may block hotlinking or change their URLs. When an image fails, the title card remains. Confirm rights before public reuse, or replace sources with appropriately licensed local images.
-
-
-## Optimized poster loading (November 2026)
-
-The Beyond Research poster gallery requests smaller ~340x408 WebP versions through wsrv.nl, with lazy loading for posters below the first row, reserved image dimensions, and a direct-source fallback if the optimizer is unavailable. This reduces expected transfer size, but speed and reliability still depend on third-party hosts.
-
-**Fastest and most reliable option:** If you have permission to use poster artwork, download approved images yourself, resize each to about 340x408 pixels, convert to WebP (quality 65–75), save under `posters/`, and replace the `src` URL with `posters/<filename>.webp`. This removes remote image dependencies.
-
-Navigation update: bold Georgia serif, 16px desktop and 15px mobile.
-
-
-## Music photographs
-The three musician portrait thumbnails are linked from Wikimedia Commons (not bundled locally). Source attribution and licenses appear beneath the Music I Enjoy cards on beyond.html. Image availability depends on Wikimedia Commons; replace with locally hosted thumbnails if you acquire copies later.
-
-
-## Contact form (Formspree)
-
-The Contact page includes an AJAX form configured to send through `https://formspree.io/f/xoeezvdl`. It collects name, email, subject, and message, with status updates and basic spam honeypot. On success the form resets; on failure it displays an error.
-
-Before using it: sign in to Formspree, ensure the form is active and its receiving address is verified, and check that notifications go to `bagheriali842@gmail.com`. After publishing on GitHub Pages, submit a test message and confirm it arrived in the Formspree dashboard and your email inbox. Formspree may show additional spam/CAPTCHA challenges depending on account settings. **This package has not sent a live test submission.**
+## Note on artwork
+Movie, TV, and musician thumbnails link to external providers and may not always load quickly. They are not bundled in this ZIP. The profile photo is stored locally for faster loading.

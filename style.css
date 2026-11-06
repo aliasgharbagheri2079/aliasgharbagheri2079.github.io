@@ -73,3 +73,56 @@
 .form-status.success{color:#d6f5d9;background:#223329;border:1px solid #5a9567}
 .form-status.error{color:#ffdfd3;background:#3b2925;border:1px solid #af7365}
 @media(max-width:650px){.contact-form-grid{grid-template-columns:1fr;gap:0}.contact-form{padding:20px 16px}.contact-form-section{margin-top:32px}.contact-form-bottom{align-items:stretch;flex-direction:column}.contact-submit{width:100%}}
+
+/* Compact contact cards and inline platform icons — no network-dependent icon libraries */
+.contact-card-compact{padding:16px 19px;min-height:0;display:flex;flex-direction:column;gap:7px;justify-content:center}
+.contact-card-head{display:flex;align-items:center;gap:11px;min-height:27px}
+.contact-card-head h3{font-size:18px;font-weight:700;line-height:1.3;margin:0;color:var(--fg)}
+.contact-card-link{margin:0!important;padding-left:36px;line-height:1.5;font-size:15px}
+.contact-card-link a{overflow-wrap:anywhere}
+.platform-icon{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;color:var(--ochre);vertical-align:middle;flex-shrink:0}
+.platform-icon svg{width:100%;height:100%;display:block}
+.platform-link{display:inline-flex!important;align-items:center;gap:7px;vertical-align:middle}
+.platform-link .platform-icon{width:17px;height:17px}
+.footer-links a{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:14px}
+@media(max-width:700px){.contact-card-compact{padding:13px 16px}.contact-card-head h3{font-size:17px}.contact-card-link{padding-left:33px;font-size:14px}}
+
+
+/* Midnight Blue & Copper — selected final working design */
+:root{color-scheme:dark;--bg:#101925;--panel:#152231;--card:#1B2938;--border:#35495A;--fg:#F0F2F4;--muted:#BAC6D0;--ochre:#D9A06A;--soft:#E5B989}
+body{background:var(--bg);color:var(--fg)}
+.site-header{background:rgba(21,34,49,.96);border-color:var(--border);position:sticky;top:3px;z-index:30;backdrop-filter:blur(12px)}
+.reading-progress{position:fixed;top:0;left:0;width:0;height:3px;background:var(--ochre);z-index:50;box-shadow:0 0 9px #d9a06a77;pointer-events:none}
+.brand{gap:0;font:700 clamp(17px,2vw,23px)/1.3 Georgia,'Times New Roman',serif;color:var(--fg)}
+.nav a{font:700 16px/1.45 Georgia,'Times New Roman',serif;color:#D1DBE2;transition:background-color .2s,color .2s}
+.nav a[aria-current=page]{background:#3C3029;border-color:#966E4A;color:#F2C394}
+.nav a:hover{background:#26394B;color:#fff}
+.menu-toggle{color:var(--fg);background:#213246;border-color:var(--border);font-family:Georgia,serif;font-weight:700}
+.hero{position:relative;isolation:isolate}
+.hero:before{content:'';position:absolute;z-index:-1;right:-2%;top:1%;width:47%;height:90%;background:radial-gradient(ellipse,#c88f5422,transparent 70%);filter:blur(16px);pointer-events:none}
+.portrait{aspect-ratio:4/5;object-fit:cover;object-position:center 25%;border:7px solid #263341;border-radius:17px;box-shadow:0 16px 36px #02081188;transition:transform .3s ease}
+.portrait:hover{transform:translateY(-4px)}
+.card{background:var(--card);border-color:var(--border);transition:border-color .24s ease,transform .24s ease,box-shadow .24s ease}
+.card:hover{border-color:#997654;box-shadow:0 9px 20px #06111b55}
+.btn,.nav a,.media-card,.artist-icon{transition:all .22s ease}
+.btn.primary{background:var(--ochre);border-color:var(--ochre);color:#101925}
+.btn:hover{transform:translateY(-2px)}
+.topic{background:#1b2c3d;border-color:#405667;color:#e3e9ef;transition:transform .2s,border-color .2s}
+.topic:hover{transform:translateY(-2px);border-color:var(--ochre)}
+.tag{background:#3b3029;color:#f1bf8b}
+.timeitem:before{background:var(--ochre);border-color:#3a3029}
+.timeline{border-color:#a67850}
+.research-details{margin-top:16px;padding-top:12px;border-top:1px solid var(--border)}
+.research-details summary{color:var(--ochre);font-weight:700;cursor:pointer}
+.research-details p{margin:10px 0 0;font-size:14px;color:var(--muted)}
+.contact-form{background:var(--card)}
+.form-field input,.form-field textarea,.form-field select{background:#111E2C;border-color:#506272;color:var(--fg)}
+.form-field label{color:var(--fg)}
+.form-field input:focus,.form-field textarea:focus,.form-field select:focus{outline-color:var(--ochre);border-color:var(--ochre)}
+.contact-card-head h3{color:var(--fg)}
+.footer{background:var(--panel);border-color:var(--border)}
+.platform-icon,.platform-link,.contact-card-link a{color:var(--ochre)}
+main{animation:siteEnter .4s ease-out both}
+@keyframes siteEnter{from{opacity:.25;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){.nav a{font-size:15px}.portrait{width:min(100%,330px);aspect-ratio:5/4;object-position:center 29%}.hero{gap:18px}.brand{font-size:17px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}

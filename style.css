@@ -41,3 +41,11 @@
   .nav a[aria-current="page"] { padding: 12px 13px; }
   .menu-toggle { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; font-weight: 700; }
 }
+
+/* Portrait thumbnails for Music I Enjoy */
+.artist-icon{overflow:hidden;position:relative;width:92px;height:94px;flex:0 0 92px;padding:0;background:#352e29}
+.artist-icon img{width:100%;height:100%;object-fit:cover;object-position:center 23%;display:block;border-radius:8px}
+.artist-icon.artist-image-unavailable:after{content:'♫';position:absolute;inset:0;display:grid;place-items:center;color:var(--ochre);font-size:34px}
+.artist-credits{margin-top:18px;max-width:950px;line-height:1.8}
+.artist-credits a{font-weight:500}
+@media(max-width:700px){.artist-icon{width:78px;height:84px;flex-basis:78px}.artist-icon img{height:100%}}

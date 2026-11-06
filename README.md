@@ -27,3 +27,7 @@ The Beyond Research poster gallery requests smaller ~340x408 WebP versions throu
 **Fastest and most reliable option:** If you have permission to use poster artwork, download approved images yourself, resize each to about 340x408 pixels, convert to WebP (quality 65–75), save under `posters/`, and replace the `src` URL with `posters/<filename>.webp`. This removes remote image dependencies.
 
 Navigation update: bold Georgia serif, 16px desktop and 15px mobile.
+
+
+## Music photographs
+The three musician portrait thumbnails are linked from Wikimedia Commons (not bundled locally). Source attribution and licenses appear beneath the Music I Enjoy cards on beyond.html. Image availability depends on Wikimedia Commons; replace with locally hosted thumbnails if you acquire copies later.

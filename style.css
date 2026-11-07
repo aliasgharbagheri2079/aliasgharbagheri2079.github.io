@@ -447,3 +447,33 @@ html[data-theme="light"] .pub .links a:hover{background:#E9EBED!important;border
 html[data-theme="light"] .publication-tabs button[aria-selected="true"]{color:#FFFFFF!important;background:#41474B!important}
 html[data-theme="light"] .section-toc a{background:#FFFFFF!important;color:#272B2E!important}
 @media(max-width:600px){body .section-toc{align-items:flex-start}body .section-toc span{width:100%}}
+
+
+/* 2026 final readability pass: semantic tokens prevent dark pills in light mode. */
+:root{--raised:#292929;--btntext:#111111}
+html[data-theme="light"]{--raised:#F6F7F8;--btntext:#FFFFFF}
+.tag,.publication-status{background:transparent!important;border:0!important;color:var(--muted)!important;box-shadow:none!important;padding:0!important;font:700 11px/1.5 system-ui,sans-serif!important;letter-spacing:.7px;text-transform:uppercase}
+html[data-theme="light"] .tag,html[data-theme="light"] .publication-status{color:#525B61!important;background:transparent!important}
+html[data-theme="light"] :is(.card h3,.card h4,.pub h3,.section h2,.section h3,.architecture-demo h4,.research-architecture h4,.head h1,.footer h2,.footer h3){color:#272B2E!important}
+html[data-theme="light"] :is(.architecture-step,.arch-step,.publication-highlights summary,.research-details summary,.links a,.external-media-link){color:#272B2E!important;background:#F6F7F8!important;border-color:#D7DBDE!important}
+html[data-theme="light"] .research-architecture,html[data-theme="light"] .architecture-demo{background:#FFFFFF!important;border-color:#D7DBDE!important}
+html[data-theme="light"] :is(.architecture-description,.arch-info,.research-details p,.publication-highlights-body){color:#61676D!important;background:#F6F7F8!important}
+html[data-theme="light"] :is(.architecture-step small,.diagram-hint){color:#61676D!important}
+html[data-theme="light"] .architecture-step[aria-pressed="true"]{background:#E9EBED!important;color:#272B2E!important;border-color:#41474B!important}
+/* Lightweight scholarly publications: no metric/chart tile grid or dashboard tabs. */
+.pub{border-left:0!important;padding:24px!important}
+.publication-highlights{margin-top:15px!important;border-top:1px solid var(--border)!important;padding-top:7px!important}
+.publication-highlights summary{font:650 13px system-ui,sans-serif;color:var(--fg)!important;background:transparent!important;cursor:pointer;padding:10px 0!important}
+.publication-highlights summary:hover{text-decoration:underline}
+.publication-highlights-body{background:var(--raised)!important;border:1px solid var(--border);border-radius:7px;padding:15px 16px;color:var(--muted)!important}
+.publication-highlights-body p{font-size:13px!important;line-height:1.8;margin:0 0 10px!important;color:var(--muted)!important;background:transparent!important;padding:0!important}
+.publication-highlights-body p:last-child{margin-bottom:0!important}
+.publication-highlights-body strong{color:var(--fg)!important}
+html[data-theme="light"] .publication-highlights-body strong{color:#272B2E!important}
+/* Genuine monochrome icons, theme-aware and keyboard accessible. */
+.footer-social{display:flex;align-items:center;gap:9px}
+.footer-social a.social-icon-link{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:38px;height:38px;padding:0!important;flex:none;color:var(--fg)!important;background:var(--card)!important;border:1px solid var(--border)!important;border-radius:7px;text-decoration:none!important}
+.footer-social a.social-icon-link svg{width:19px;height:19px;display:block;flex:none;stroke:currentColor}
+.footer-social a.social-icon-link:hover{background:var(--raised)!important;border-color:var(--ochre)!important}
+.footer-social a.social-icon-link:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
+@media(max-width:600px){.pub{padding:17px!important}.publication-highlights-body{padding:12px!important}}

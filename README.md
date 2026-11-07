@@ -45,3 +45,7 @@ Peekage: Remote. Both Okala roles and TapsiFood: On-site. These labels follow th
 
 ## Publications update
 Expanded both paper highlights with source-grounded research questions, methods, results, applications, and limitations. Note that the two studies share experimental recording sessions but use different models and evaluation tasks. Personal movie/series rating selections from ChatGPT previews are not transmitted to website files; do not fabricate them.
+
+
+## November 2026: Black & Emerald UI update
+The live site is not automatically changed. This archive updates **all eight HTML pages**, `style.css` and `site.js` to the selected Black & Emerald palette (`#0B1010` background, `#172323` surfaces, `#35C5A1` accent). The Georgia font and compact navigation (Home, Research, Publications, Education, Professional, More) are retained, including the dropdown's three pages. The Publications page retains its expanded, paper-based highlights; IMDb and Spotify gallery links remain included. Movie ratings were not supplied as text and have not been fabricated.

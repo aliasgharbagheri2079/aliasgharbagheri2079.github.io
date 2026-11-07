@@ -76,3 +76,13 @@ document.addEventListener('DOMContentLoaded',()=>{
  });});
  select(tabs[0]);
 });
+
+/* Accessible More menu for compact navigation */
+document.addEventListener('DOMContentLoaded',()=>{
+ const btn=document.querySelector('.more-trigger'), menu=document.querySelector('.more-dropdown');
+ if(!btn||!menu)return;
+ function close(){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')}
+ btn.addEventListener('click',()=>{let open=!menu.classList.contains('open');menu.classList.toggle('open',open);btn.setAttribute('aria-expanded',String(open))});
+ document.addEventListener('click',e=>{if(!btn.parentElement.contains(e.target))close()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
+});

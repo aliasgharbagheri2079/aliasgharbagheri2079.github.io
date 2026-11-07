@@ -101,35 +101,17 @@ document.addEventListener('DOMContentLoaded',()=>{
    for(const name of genres){const b=document.createElement('button');b.type='button';b.textContent=name;b.dataset.genre=name;b.addEventListener('click',()=>select(name));controls.appendChild(b)}
    select('All');
  }
- for(const b of root.querySelectorAll('.feature-choice'))b.addEventListener('click',()=>{
-   const name=b.dataset.feature,kind=b.dataset.kind;
-   root.querySelector('#selected-feature-title').textContent=name;
-   root.querySelector('#selected-feature-note').textContent=kind+' · Featured selection in this browser session';
-   for(const x of root.querySelectorAll('.feature-choice')){x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))}
- });
+
 });
 
 
-/* Advanced features — stored reading preference, local search and research exploration. */
+/* Interactive research and publication tabs (one controller each). */
 document.addEventListener('DOMContentLoaded',()=>{
- const html=document.documentElement;
- const selectedTheme=(()=>{try{return localStorage.getItem('academic-theme')||'dark'}catch(e){return 'dark'}})();
- const btn=document.querySelector('.theme-toggle');
- function applyTheme(mode){html.dataset.theme=mode;const light=mode==='light';btn.textContent=light?'☾':'☼';btn.setAttribute('aria-label',light?'Switch to Pure Monochrome dark mode':'Switch to Soft Silver light mode');btn.title=light?'Switch to dark mode':'Switch to light reading mode';document.querySelector('meta[name="theme-color"]')?.setAttribute('content',light?'#F2F3F4':'#111111');}
- applyTheme(selectedTheme==='light'?'light':'dark');btn?.addEventListener('click',()=>{const mode=html.dataset.theme==='light'?'dark':'light';applyTheme(mode);try{localStorage.setItem('academic-theme',mode)}catch(e){}});
- const searchBtn=document.querySelector('.search-toggle'),closeBtn=document.querySelector('.search-close'),panel=document.getElementById('site-search-panel'),input=document.getElementById('site-search-input'),output=document.querySelector('.site-search-results');
- const pages=[['Home','index.html','about research interests academic journey bioelectric'],['Research','projects.html','EEG sEMG fusion CNN GRU recurrent attention fatigue microsaccades neural decoding'],['Publications','publications.html','ICEE ICBME IEEE cross attention 98.23 92.45 84.58 75.46'],['Education','education.html','Sharif University of Technology University of Tehran GPA thesis supervisor'],['Academic Experience','experience.html','teaching assistant Python MATLAB PyTorch TensorFlow technical skills'],['Professional Experience','professional.html','Peekage Okala TapsiFood data scientist analytics customer insights'],['Beyond Research','beyond.html','movies series ratings Inglourious Basterds Gone Girl Se7en Sherlock Spotify music'],['Contact','contact.html#contact-form','Formspree message email LinkedIn Google Scholar Telegram']];
- function close(){panel.hidden=true;searchBtn.setAttribute('aria-expanded','false')}
- searchBtn?.addEventListener('click',()=>{panel.hidden=!panel.hidden;searchBtn.setAttribute('aria-expanded',String(!panel.hidden));if(!panel.hidden)input.focus()});closeBtn?.addEventListener('click',close);
- document.addEventListener('keydown',ev=>{if(ev.key==='Escape')close();if((ev.ctrlKey||ev.metaKey)&&ev.key.toLowerCase()==='k'){ev.preventDefault();panel.hidden=false;input.focus()}});
- input?.addEventListener('input',()=>{const q=input.value.trim().toLowerCase().split(/\s+/).filter(Boolean);output.replaceChildren();if(!q.length){output.innerHTML='<p>Search publications, research, skills and pages.</p>';return}let matches=pages.filter(p=>q.every(k=>(p[0]+' '+p[2]).toLowerCase().includes(k)));if(!matches.length){output.innerHTML='<p>No matches found. Try “EEG”, “attention”, “Python”, or “Peekage”.</p>';return}for(const p of matches){const a=document.createElement('a');a.href=p[1];a.textContent=p[0]+' ↗';output.appendChild(a)}});
- document.querySelector('.back-to-top')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
  const descriptions={fusion:{eeg:'EEG records cortical activity related to movement; a CNN encoder extracts neural features.',semg:'Six-channel sEMG captures muscle activation and is processed by a modality-specific convolutional encoder.',self:'Self-attention highlights informative representations within each modality.',cross:'Cross-attention explicitly learns relationships between EEG and sEMG feature representations.',classify:'The fused representation is classified into four target hand and wrist gestures.'},fatigue:{input:'Six forearm sEMG channels are processed into 250 ms windows.',cnn:'CNN architectures learn local patterns in short sEMG segments.',gru:'GRU architectures model temporal dependencies and showed greater robustness in severe simulated degradation.',attention:'Self-attention was evaluated as an extension of CNN and GRU backbones, rather than a single sequential architecture.',test:'Models trained on clean signals were tested under simulated amplitude reduction and spectral tilt without retraining.'}};
  document.querySelectorAll('[data-architecture]').forEach(w=>{w.querySelectorAll('[data-stage]').forEach(b=>b.addEventListener('click',()=>{w.querySelectorAll('[data-stage]').forEach(s=>s.setAttribute('aria-pressed',String(s===b)));w.querySelector('.architecture-description').textContent=descriptions[w.dataset.architecture][b.dataset.stage]}))});
  const pub={icee:{overview:'Investigates robustness of low-channel sEMG gesture recognition under simulated fatigue-related signal distortions.',methods:'Six forearm sEMG channels, eight healthy participants, four gestures and 250 ms windows. Compared classical classifiers, CNN, GRU, MHA+CNN and MHA+GRU, using synthetic amplitude attenuation and frequency-domain spectral tilt.',findings:'MHA+CNN achieved 98.23% accuracy on clean signals. MHA+GRU retained 65.19% at 80% simulated amplitude reduction (CNN: 29.21%) and 84.58% under strongest spectral tilt (CNN: 53.81%).',limitations:'Fatigue was simulated on non-fatigued recordings. The paper does not validate natural muscle fatigue, clinical deployment or cross-subject transfer.'},icbme:{overview:'Proposes EEG–sEMG multimodal fusion using cross-attention to preserve gesture recognition performance when muscle signals are degraded.',methods:'Synchronized 32-channel EEG and six-channel sEMG from eight healthy participants, with signal filtering, EEG ICA, parallel CNN encoders, self-attention and cross-attention.',findings:'Cross-attention achieved 92.45% accuracy on clean recordings; 78.05% at 80% simulated amplitude attenuation; and 75.46% at the strongest simulated frequency shift, outperforming evaluated baselines.',limitations:'The controlled sEMG perturbations do not reproduce all aspects of physiological muscle fatigue; clinical and naturally fatigued use were not established.'}};
  document.querySelectorAll('.publication-tabs').forEach(t=>{const card=t.closest('.pub'),key=card.id==='publication-icee'?'icee':'icbme',out=card.querySelector('.publication-tab-panel');function select(b){t.querySelectorAll('button').forEach(x=>x.setAttribute('aria-selected',String(x===b)));out.textContent=pub[key][b.dataset.detail]}t.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>select(b)));select(t.querySelector('button'))});
 });
-
 
 /* Dual reading modes, cross-page searching and research interactions. */
 (()=>{
@@ -138,14 +120,14 @@ let saved='dark';try{saved=localStorage.getItem('aliasghar-reading-mode')||'dark
 document.addEventListener('DOMContentLoaded',()=>{
  document.querySelectorAll('.theme-trigger').forEach(b=>b.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='light'?'dark':'light';apply(next);try{localStorage.setItem('aliasghar-reading-mode',next)}catch(_){}}));
  const search=document.querySelector('.site-search'),field=document.querySelector('#site-search-input'),results=document.querySelector('#site-search-results');
- const close=()=>{if(search)search.hidden=true};
- document.querySelector('.search-trigger')?.addEventListener('click',()=>{if(!search)return;search.hidden=!search.hidden;if(!search.hidden)field?.focus()});
+ const trigger=document.querySelector('.search-trigger');const close=()=>{if(search)search.hidden=true;trigger?.setAttribute('aria-expanded','false')};
+ document.querySelector('.search-trigger')?.addEventListener('click',()=>{if(!search)return;search.hidden=!search.hidden;trigger?.setAttribute('aria-expanded',String(!search.hidden));if(!search.hidden)field?.focus()});
  document.querySelector('.search-dismiss')?.addEventListener('click',close);
- document.addEventListener('keydown',e=>{if(e.key==='Escape')close();if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();if(search){search.hidden=false;field?.focus()}}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')close();if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();if(search){search.hidden=false;trigger?.setAttribute('aria-expanded','true');field?.focus()}}});
  let index=[];fetch('search-index.json').then(r=>r.ok?r.json():[]).then(data=>{index=data;renderSearch()}).catch(()=>{if(results)results.innerHTML='<p>Search index could not load. Open the website using a web server.</p>'});
  const renderSearch=()=>{if(!results||!field)return;const tokens=field.value.trim().toLowerCase().split(/\s+/).filter(Boolean);if(!tokens.length){results.innerHTML='<p>Search across research, publications, skills and other pages.</p>';return}const matches=index.map(v=>({...v,score:tokens.reduce((n,t)=>n+(v.title.toLowerCase().includes(t)?5:0)+(v.keywords.toLowerCase().includes(t)?1:0),0)})).filter(v=>tokens.every(t=>(v.title+' '+v.keywords).toLowerCase().includes(t))).sort((a,b)=>b.score-a.score).slice(0,8);results.replaceChildren();if(!matches.length){const p=document.createElement('p');p.textContent='No results. Try EEG, GRU, Python, or Publications.';results.append(p);return}for(const item of matches){const a=document.createElement('a');a.href=item.url;a.textContent=item.title+' →';results.append(a)}};
  field?.addEventListener('input',renderSearch);
- document.querySelector('.back-to-top')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'}));
+ document.querySelector('.back-to-top')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));
  document.querySelectorAll('.arch-steps').forEach(group=>group.querySelectorAll('.arch-step').forEach(button=>button.addEventListener('click',()=>{group.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b===button));group.parentElement.querySelector('.arch-info').textContent=button.dataset.explanation})));
  document.querySelectorAll('.paper-tabs').forEach(tabs=>{let text=[];try{text=JSON.parse(tabs.dataset.descriptions)}catch(_){}const output=tabs.nextElementSibling;tabs.querySelectorAll('.paper-tab').forEach(btn=>btn.addEventListener('click',()=>{tabs.querySelectorAll('.paper-tab').forEach(b=>{const active=b===btn;b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active))});if(output)output.textContent=text[Number(btn.dataset.part)]||''}))});
 });

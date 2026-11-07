@@ -389,3 +389,16 @@ html[data-theme="light"] .publication-metric strong,html[data-theme="light"] .ey
 @media(max-width:700px){.brandbar{gap:8px}.brand{font-size:15px}.footer-columns{grid-template-columns:1fr 1fr;gap:20px}.footer-columns>div:last-child{grid-column:1/-1}.section-toc{gap:5px}.publication-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.header-tool{width:34px;height:34px}}
 @media(max-width:480px){.footer-columns{grid-template-columns:1fr}.footer-columns>div:last-child{grid-column:auto}.publication-metrics{grid-template-columns:1fr}.footer-bottom{align-items:start;flex-direction:column}.header-actions{gap:4px}.brand{font-size:14px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+/* Final cleanup — one search and one reading-mode control */
+.header-actions{display:flex;align-items:center;gap:8px}
+.header-tool{width:38px;height:38px;flex-shrink:0}
+.site-search[hidden]{display:none!important}
+.site-search{background:var(--panel);border-top:1px solid var(--border)}
+.feature-choice,.featured-favorite{display:none!important}
+/* Theme-specific typography: prevent near-white headings in Soft Silver */
+html[data-theme="light"] :is(h1,h2,h3,h4,h5,h6,.brand,.publication-title,.timeitem h3,.section h2,.card h3,.footer-cta h2){color:#272B2E!important}
+html[data-theme="light"] :is(.head p,.card p,.timeitem p,.publication-tab-panel,.arch-info,.footer-cta p){color:#61676D!important}
+html[data-theme="light"] .header-tool{background:#FFFFFF!important;color:#272B2E!important;border-color:#D7DBDE!important}
+html[data-theme="light"] .site-search{background:#E9EBED!important}
+@media(max-width:700px){.brandbar{align-items:center}.header-actions{gap:5px}.header-tool{width:34px;height:34px}}

@@ -78,3 +78,13 @@ The live site is not automatically changed. This archive updates **all eight HTM
 - Research page has interactive architecture stage explanations; Publications page has tabbed highlights and original expandable full research details.
 - Minimal Get in Touch footer on every page, shortcuts to all eight pages, CV, social profiles, and direct link to existing Formspree form.
 - No domain, DNS or GitHub settings modified. Upload all HTML files, `style.css`, `site.js`, and `search-index.json` together to deploy.
+
+
+## Debug update — November 2026
+- Removed duplicate search and theme buttons in the header on all eight pages, and eliminated two conflicting JavaScript controllers.
+- Preserved a single search control using `search-index.json` and a single Pure Monochrome / Soft Silver theme toggle.
+- Removed Featured Favorite and all per-item Feature controls from Beyond Research. Personal ratings, IMDb and Spotify links and genre filters remain.
+- Removed duplicate architecture diagrams in Research; retained the more detailed interactive diagram for each of the two studies.
+- Corrected Soft Silver text contrast in headings, publication details, navigation and form controls.
+- Kept the existing CNAME for `aliasgharbagheri.com`, CV.pdf, profile image and Formspree configuration.
+- Publish by uploading the ZIP's contents to the root of your GitHub Pages repository.

@@ -88,3 +88,7 @@ The live site is not automatically changed. This archive updates **all eight HTM
 - Corrected Soft Silver text contrast in headings, publication details, navigation and form controls.
 - Kept the existing CNAME for `aliasgharbagheri.com`, CV.pdf, profile image and Formspree configuration.
 - Publish by uploading the ZIP's contents to the root of your GitHub Pages repository.
+
+
+### Professional Experience timeline update (2026-11-07)
+The Professional Experience page now uses a compact, logo-free academic timeline with four verified roles, dates, work arrangements, concise descriptions, skill tags, and native expandable responsibilities. Pure Monochrome / Soft Silver styling is preserved; no other page content is changed.

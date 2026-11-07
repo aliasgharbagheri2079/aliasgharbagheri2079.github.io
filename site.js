@@ -86,3 +86,25 @@ document.addEventListener('DOMContentLoaded',()=>{
  document.addEventListener('click',e=>{if(!btn.parentElement.contains(e.target))close()});
  document.addEventListener('keydown',e=>{if(e.key==='Escape')close()});
 });
+
+/* Beyond Research: fixed user-supplied ratings, genre filter, featured selection */
+document.addEventListener('DOMContentLoaded',()=>{
+ const root=document.querySelector('main #gallery-movies')?.closest('main');if(!root)return;
+ for(const panel of root.querySelectorAll('#gallery-movies,#gallery-series')){
+   const controls=panel.querySelector('.genre-filter');if(!controls)continue;
+   const cards=[...panel.querySelectorAll('.media-card')];
+   const genres=['All',...new Set(cards.flatMap(card=>(card.dataset.genres||'').split(',').filter(Boolean)))];
+   const select=(name)=>{
+     for(const card of cards)card.classList.toggle('genre-hidden',name!=='All'&&!card.dataset.genres.split(',').includes(name));
+     for(const b of controls.querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.genre===name));
+   };
+   for(const name of genres){const b=document.createElement('button');b.type='button';b.textContent=name;b.dataset.genre=name;b.addEventListener('click',()=>select(name));controls.appendChild(b)}
+   select('All');
+ }
+ for(const b of root.querySelectorAll('.feature-choice'))b.addEventListener('click',()=>{
+   const name=b.dataset.feature,kind=b.dataset.kind;
+   root.querySelector('#selected-feature-title').textContent=name;
+   root.querySelector('#selected-feature-note').textContent=kind+' · Featured selection in this browser session';
+   for(const x of root.querySelectorAll('.feature-choice')){x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))}
+ });
+});

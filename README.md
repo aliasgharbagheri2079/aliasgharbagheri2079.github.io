@@ -49,3 +49,13 @@ Expanded both paper highlights with source-grounded research questions, methods,
 
 ## November 2026: Black & Emerald UI update
 The live site is not automatically changed. This archive updates **all eight HTML pages**, `style.css` and `site.js` to the selected Black & Emerald palette (`#0B1010` background, `#172323` surfaces, `#35C5A1` accent). The Georgia font and compact navigation (Home, Research, Publications, Education, Professional, More) are retained, including the dropdown's three pages. The Publications page retains its expanded, paper-based highlights; IMDb and Spotify gallery links remain included. Movie ratings were not supplied as text and have not been fabricated.
+
+
+## November 2026: Pure Monochrome edition
+- Background #111111; surface #222222; navigation #191919; text #F5F5F5; secondary #B0B0B0; border #393939; accent #D0D0D0.
+- All 8 original pages retained with Georgia serif font and compact navigation.
+- Beyond Research: fixed personal ratings extracted from screenshots (5 movies, 6 TV series), clickable IMDb posters, IMDb/Spotify links, film and TV genre filters, optional in-browser Featured Favorite preview, personal reflections.
+- Featured Favorite selection is not saved across browser visits and no favorite is invented or chosen by default. No favorite song/album input is present.
+- Expanded Publications research highlights retained from both supplied research papers. Simulated fatigue distinguished from real muscle fatigue.
+- Posters/artist portraits still use external URLs, so some may fail to load when those hosts block access. Original uploaded portrait and the CV are in this ZIP.
+- This package is **not deployed** to GitHub Pages. Upload its files to the repository to publish the changes.

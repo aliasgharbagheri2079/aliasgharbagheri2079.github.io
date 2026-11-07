@@ -167,3 +167,33 @@ main{animation:siteEnter .4s ease-out both}
 .professional-details p{background:#1c2f41;border-left:2px solid var(--ochre);margin:7px 0 0!important;padding:13px 15px;border-radius:0 7px 7px 0}
 .professional-note{margin-top:25px;font-size:13px;color:var(--muted)}
 @media(max-width:650px){.professional-entry{grid-template-columns:62px minmax(0,1fr);gap:13px;padding:22px 0}.professional-logo{width:62px;height:62px;border-radius:11px;padding:5px}.company-wordmark{font-size:10px}.tapsi-wordmark{font-size:11px}.professional-body h2{font-size:20px}.professional-company{font-size:13px}}
+
+/* Verified work arrangement labels */
+.professional-meta-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:7px}
+.professional-meta-row .professional-dates{margin-bottom:0}
+.work-arrangement{display:inline-flex;align-items:center;justify-content:center;min-height:27px;padding:3px 12px;border:1px solid #9e784f;background:#3b302a;color:#f0c797;border-radius:999px;font:600 12px/1.25 Georgia,serif;white-space:nowrap}
+@media(max-width:650px){.professional-meta-row{gap:7px}.work-arrangement{font-size:11px;padding:3px 9px;min-height:24px}}
+
+/* Beyond Research: compact external discovery links, accessible clickable posters */
+.poster{position:relative;isolation:isolate;overflow:hidden}
+.poster-link{position:absolute;inset:0;z-index:3;border-radius:inherit}
+.poster-link:focus-visible{outline:3px solid var(--ochre);outline-offset:-4px}
+.poster img{transition:transform .22s ease,filter .22s ease}
+.media-card:hover .poster img,.media-card:focus-within .poster img{transform:scale(1.045)}
+.media-card:hover,.media-card:focus-within{border-color:#a47a56;box-shadow:0 12px 25px #0004}
+.media-info{display:flex;flex-direction:column;align-items:flex-start}
+.external-media-link{display:inline-flex;align-items:center;gap:7px;margin-top:12px;
+ padding:7px 11px;border-radius:7px;border:1px solid #6b6256;
+ background:#263543;color:#f0f2f4!important;text-decoration:none!important;
+ font:700 12px/1.3 system-ui,sans-serif;min-height:34px;transition:background .2s,border-color .2s}
+.external-media-link:hover{background:#324457;border-color:#c6a077}
+.external-media-link:focus-visible{outline:2px solid #d9a06a;outline-offset:2px}
+.imdb-mark{background:#F5C518;color:#121212;padding:2px 4px;border-radius:3px;
+ font:900 12px/1.15 Arial,sans-serif;letter-spacing:-.4px}
+.spotify-link svg{flex:none}
+.artist .external-media-link{margin-top:10px}
+@media(max-width:600px){.external-media-link{font-size:11px;padding:7px 9px}.poster{aspect-ratio:5/6}}
+@media(prefers-reduced-motion:reduce){.poster img,.media-card,.external-media-link{transition:none!important}}
+
+/* Research highlights, based on the supplied ICEE and ICBME papers */
+.pub-intro{line-height:1.85}.publication-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0 18px}.publication-metric{background:#1c3040;border:1px solid #405467;border-radius:9px;padding:13px 15px}.publication-metric strong{display:block;color:#d9a06a;font:700 23px Georgia,serif}.publication-metric span{display:block;color:#bfd0dc;font:12px/1.5 system-ui,sans-serif;margin-top:4px}.publication-detail-content{padding:8px 3px}.publication-highlight-list{padding-left:20px;color:#c6d4de;line-height:1.75}.publication-highlight-list li{margin-bottom:11px}.publication-highlight-list strong{color:#f0f2f4}@media(max-width:540px){.publication-metrics{grid-template-columns:1fr}}

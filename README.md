@@ -24,7 +24,24 @@ Latest update: Beyond Research uses rounded Movies / TV Series / Music tabs; hom
 
 ## Professional Experience page
 - `professional.html` is included in every page's navigation.
-- The official Okala logo supplied by the website owner is stored locally at `assets/logos/okala.webp` and reused for both Okala roles.
+- The Okala logo is embedded in `professional.html` (same verified image supplied by the website owner), so no `assets/` directory is needed.
 - Peekage and TapsiFood use **typographic wordmark placeholders**, not claimed official logos. Replace them with verified original assets when available.
 - Work arrangement (Remote/Hybrid/On-site) is intentionally not stated until verified.
 - All existing academic pages and the Formspree contact integration remain intact.
+
+## Peekage update
+The Peekage description now focuses on implementing new AI platforms and analyzing customer data to generate actionable customer insights, without inventing unverified tools or quantified outcomes.
+
+## Work arrangement labels
+Peekage: Remote. Both Okala roles and TapsiFood: On-site. These labels follow the user-provided screenshot.
+
+## Beyond Research: IMDb and Spotify links
+- Each movie and TV-series poster opens its corresponding IMDb title page in a new tab.
+- Each item also has an IMDb button; each musician has a Spotify artist button.
+- Short first-person notes replace generic plot summaries.
+- Poster hover/focus effects use lightweight CSS.
+- All currently configured poster/artist images remain unchanged and may depend on external hosts.
+- This update retains the existing Midnight Blue & Copper published-files palette. A Black & Emerald theme was previewed previously but is not applied in this ZIP.
+
+## Publications update
+Expanded both paper highlights with source-grounded research questions, methods, results, applications, and limitations. Note that the two studies share experimental recording sessions but use different models and evaluation tasks. Personal movie/series rating selections from ChatGPT previews are not transmitted to website files; do not fabricate them.

@@ -59,3 +59,22 @@ The live site is not automatically changed. This archive updates **all eight HTM
 - Expanded Publications research highlights retained from both supplied research papers. Simulated fatigue distinguished from real muscle fatigue.
 - Posters/artist portraits still use external URLs, so some may fail to load when those hosts block access. Original uploaded portrait and the CV are in this ZIP.
 - This package is **not deployed** to GitHub Pages. Upload its files to the repository to publish the changes.
+
+
+## Advanced Pure Monochrome + Soft Silver version
+- Default: Pure Monochrome dark (#111111 background), with optional Soft Silver light reading mode (#F2F3F4 background, #272B2E titles). Theme choice is saved per browser.
+- Eight original HTML pages retained, with expanded publication tabs and interactive research-stage diagrams.
+- Search covers the major pages and curated topics without sending search queries externally.
+- Shared Get in Touch footer with all eight internal page shortcuts, CV, social links and Back to Top.
+- Contact form keeps the existing Formspree endpoint and gains #contact-form anchor navigation.
+- All 11 ratings remain the user's provided scores; original Beyond Research images, ISBN/IMDb/Spotify links retained.
+- Upload all 13 site files, preserving their names and placing them in the repository root. Existing GitHub Pages custom-domain settings are not modified by the ZIP.
+
+
+## November 2026 — Advanced dual-theme update
+- Default Pure Monochrome (`#111111`, `#222222`), optional Soft Silver light mode (`#F2F3F4`, `#FFFFFF`).
+- Theme preference stored in browser localStorage; explicit light-mode heading and text overrides fix the previously white-on-white headings.
+- Compact header adds search across all eight pages (via `search-index.json`) and reading-mode switch.
+- Research page has interactive architecture stage explanations; Publications page has tabbed highlights and original expandable full research details.
+- Minimal Get in Touch footer on every page, shortcuts to all eight pages, CV, social profiles, and direct link to existing Formspree form.
+- No domain, DNS or GitHub settings modified. Upload all HTML files, `style.css`, `site.js`, and `search-index.json` together to deploy.

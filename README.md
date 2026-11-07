@@ -92,3 +92,10 @@ The live site is not automatically changed. This archive updates **all eight HTM
 
 ### Professional Experience timeline update (2026-11-07)
 The Professional Experience page now uses a compact, logo-free academic timeline with four verified roles, dates, work arrangements, concise descriptions, skill tags, and native expandable responsibilities. Pure Monochrome / Soft Silver styling is preserved; no other page content is changed.
+
+## 2026-11-07 Publications fixes
+- Removed duplicated publication on-page navigation.
+- Fixed the ICEE/ICBME research overview tab mapping (paper IDs).
+- Replaced heavy status badges with restrained status labels.
+- Fixed light-mode contrast for the IEEE and DOI links and selected tabs.
+- Both reading modes and all eight pages are preserved.

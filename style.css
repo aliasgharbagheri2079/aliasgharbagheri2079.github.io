@@ -146,3 +146,24 @@ main{animation:siteEnter .4s ease-out both}
   .gallery-tabs{gap:8px;margin:18px 0 22px}
   .gallery-tab{font-size:15px;min-height:43px;padding:9px 17px}
 }
+
+/* Professional Experience: academic editorial presentation */
+.professional-list{display:grid;gap:0}
+.professional-entry{display:grid;grid-template-columns:92px minmax(0,1fr);gap:22px;padding:28px 0;border-bottom:1px solid var(--border);align-items:start}
+.professional-logo{width:92px;height:92px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #d9dce0;border-radius:16px;padding:9px;overflow:hidden}
+.professional-logo img{display:block;width:100%;height:100%;object-fit:contain}
+.company-wordmark{color:#1b2938;font:700 14px/1.1 Georgia,serif;letter-spacing:-.3px;text-align:center}
+.peekage-wordmark{color:#c83381}
+.tapsi-wordmark{font:800 15px/1.05 system-ui,sans-serif;color:#f05e31}
+.professional-dates{font:700 11px system-ui,sans-serif;color:var(--ochre);letter-spacing:.4px;margin-bottom:6px}
+.professional-body h2{font-size:clamp(21px,3vw,27px);line-height:1.25;margin:0 0 5px}
+.professional-company{font-weight:700;color:var(--fg);margin:0 0 10px}
+.professional-separator{color:#89a0b1;padding:0 4px}
+.professional-description{max-width:740px;margin-bottom:13px}
+.work-tags{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
+.work-tag{border:1px solid #486073;background:#1c2e40;color:#d2e0e9;padding:5px 10px;border-radius:999px;font:600 11px system-ui,sans-serif}
+.professional-details{margin:7px 0 0;max-width:760px;border:0;padding:0}
+.professional-details summary{display:inline-block;padding:8px 0;color:var(--ochre);cursor:pointer;font:700 12px system-ui,sans-serif}
+.professional-details p{background:#1c2f41;border-left:2px solid var(--ochre);margin:7px 0 0!important;padding:13px 15px;border-radius:0 7px 7px 0}
+.professional-note{margin-top:25px;font-size:13px;color:var(--muted)}
+@media(max-width:650px){.professional-entry{grid-template-columns:62px minmax(0,1fr);gap:13px;padding:22px 0}.professional-logo{width:62px;height:62px;border-radius:11px;padding:5px}.company-wordmark{font-size:10px}.tapsi-wordmark{font-size:11px}.professional-body h2{font-size:20px}.professional-company{font-size:13px}}

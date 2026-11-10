@@ -477,3 +477,35 @@ html[data-theme="light"] .publication-highlights-body strong{color:#272B2E!impor
 .footer-social a.social-icon-link:hover{background:var(--raised)!important;border-color:var(--ochre)!important}
 .footer-social a.social-icon-link:focus-visible{outline:2px solid var(--ochre);outline-offset:3px}
 @media(max-width:600px){.pub{padding:17px!important}.publication-highlights-body{padding:12px!important}}
+/* Replace old search glyph with upright magnifier.
+   Paste this block at the very end of style.css. */
+.site-header .header-tool.search-trigger {
+  position: relative;
+  font-size: 0 !important; /* hides the legacy ⌕ character */
+}
+.site-header .header-tool.search-trigger::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.site-header .header-tool.search-trigger::after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 21px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
